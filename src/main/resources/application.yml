@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: default
+
+
+---
+
+spring:
+  profiles: default
+  datasource:
+    url: jdbc:mysql://localhost:3306/clvs?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-Class-Name: com.mysql.cj.jdbc.Driver
+    username: clvs
+    password: demo12345
+
+logging:
+  file:
+    path: D:\clvs\logs\spring-seunggyu
+    max-size: 500MB
+    max-history: 10
+  level:
+    root: info
+
+server:
+  port: 3333
+
+---
+
+spring:
+  profiles: dev
+
+server:
+  port: 3030
+
+---
+
+spring:
+  profiles: local
+
+server:
+  port: 3131
