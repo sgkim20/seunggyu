@@ -13,7 +13,8 @@ public class MemoryUserDao implements UserDao {
 
     @Override
     public Optional<User> findUser(long seq) {
-        return Optional.empty();
+        return Optional.ofNullable(add.get(seq)); // 자바8버전 부터 도입된 기능으로 of는 매개변수로 null값을 받지 않는 설정
+                                                  // ofNullable은 null값을 허용한다는 설정이다.
     }
 
     @Override
